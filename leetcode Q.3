@@ -1,0 +1,15 @@
+ int [] n=new int[128];
+       int L=0;
+       int R =0;
+       int ans=0;
+       while(R<  s.length()){
+        char currentchar=s.charAt(R);
+
+        L=Math.max(L,n[currentchar]);
+
+ans =Math.max(ans,R-L+1);
+
+        n[currentchar]=R+1;
+        R++;
+       }
+       return ans;
