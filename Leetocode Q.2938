@@ -1,0 +1,9 @@
+ long whitesteps=0;
+        long whitecount=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='0'){
+                whitesteps+=i-whitecount;
+                whitecount++;
+            }
+        }
+        return whitesteps;
