@@ -1,0 +1,18 @@
+ StringBuilder result =new StringBuilder();
+        int consecutivecount=0;
+        char lastchar='\0';
+
+        for(char c: s.toCharArray()){
+            if (c== lastchar){
+                consecutivecount ++;
+
+            }else {
+                consecutivecount=1;
+                lastchar=c;
+            }
+
+            if(consecutivecount <3){
+                result.append(c);
+            }
+        }
+        return result.toString();
