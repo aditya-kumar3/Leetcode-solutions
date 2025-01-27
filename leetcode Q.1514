@@ -1,0 +1,18 @@
+ for (int j = 0; j < edges.length; j++) {
+                int u = edges[j][0];
+                int v = edges[j][1];
+                double prob = succProb[j];
+
+                if (maxProb[u] * prob > maxProb[v]) {
+                    maxProb[v] = maxProb[u] * prob;
+                    updated = true;
+                }
+                if (maxProb[v] * prob > maxProb[u]) {
+                    maxProb[u] = maxProb[v] * prob;
+                    updated = true;
+                }
+            }
+            if (!updated) break;
+        }
+
+        return maxProb[end_node];
