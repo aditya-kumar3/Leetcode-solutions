@@ -1,0 +1,27 @@
+class Solution {
+    public int findKthNumber(int n, int k) {
+        int a =1;
+     k--;
+     
+     while(k>0){
+        int x=cs(n,a,a+1);
+        if(x<=k){
+            a+=1;
+            k-=x;
+        }
+        else{
+            a*=10;
+            k--;
+        }
+     }return a;
+    }
+    private int cs(int n,long cp,long np){
+        int s=0;
+        while(cp<=n){
+            s+=Math.min(n+1,np)-cp;
+            cp*=10;
+np*=10;
+        }
+        return s;
+    }
+}
