@@ -1,0 +1,6 @@
+class Solution {
+    public long maxTotalValue(int[] A, int k) {
+        return (long) k*Arrays.stream(A).max().getAsInt() -
+                      k*Arrays.stream(A).min().getAsInt();
+    }
+}
